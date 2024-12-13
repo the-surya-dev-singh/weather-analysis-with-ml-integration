@@ -24,7 +24,7 @@ def get_db_connection():
 
 #Fetch new data from the database
 def fetch_new_data(last_id, conn):
-    query = f"SELECT SQL_NO_CACHE * FROM weather_data WHERE `id` > '{2}' ORDER BY `id` ASC"
+    query = f"SELECT SQL_NO_CACHE * FROM weather_data WHERE `id` > '{last_id}' ORDER BY `id` ASC"
     new_data = pd.read_sql(query, conn)
     return new_data
 
